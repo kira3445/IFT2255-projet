@@ -1,6 +1,6 @@
-# [Nom du projet]
+#  Plateforme de planification des études — projet de session IFT2255 (Automne 2026), Phase 1
 
-> Plateforme de planification des études — projet de session IFT2255 (Automne 2026), Phase 1
+
 
 ## 1. À quoi sert le projet
 
