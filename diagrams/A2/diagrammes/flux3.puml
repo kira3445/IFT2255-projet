@@ -1,0 +1,52 @@
+@startuml flux3
+title Flux 3 UC11 Demander une exception au département
+
+|Étudiant|
+start
+:Constater un cours complet
+ou en conflit d'horaire;
+:Remplir la demande d'exception
+(cours visé, motif);
+
+|Système|
+:Vérifier la date limite
+de modification de l'inscription;
+if (Date limite dépassée ?) then (oui)
+  #FFCDD2:Indiquer que la demande
+  n'est plus recevable
+  (échec : hors délai);
+  stop
+else (non)
+endif
+:Transmettre la demande à l'administration (département);
+:Afficher la demande comme « en attente »
+avec le délai habituel de réponse;
+
+|Administration (département)|
+:Examiner la demande;
+:Rendre une décision
+(lettre d'acceptation ou refus);
+
+|Système|
+if (Décision reçue avant la date limite ?) then (non)
+  #FFCDD2:Avertir l'étudiant et proposer
+  un cours de remplacement
+  (échec : réponse trop tardive);
+  stop
+else (oui)
+endif
+if (Exception accordée ?) then (non)
+  #FFCDD2:Notifier le refus et proposer
+  un cours de remplacement
+  (échec : refus);
+  stop
+else (oui)
+endif
+:Ajouter le cours au plan;
+:Joindre la lettre d'acceptation au dossier;
+:Notifier l'étudiant;
+
+|Étudiant|
+:Fin : cours obtenu par exception;
+stop
+@enduml

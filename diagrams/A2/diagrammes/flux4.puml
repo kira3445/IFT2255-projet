@@ -1,0 +1,44 @@
+@startuml flux4
+title Flux 4 UC10 Modifier ou annuler une inscription ou une demande\n(scénario : retrait d'une activité)
+
+|Étudiant|
+start
+:Sélectionner une activité du plan;
+:Cliquer sur « Retirer »;
+
+|Système|
+:Vérifier les dates limites
+(modification, abandon);
+if (Date limite d'abandon dépassée ?) then (oui)
+  #FFCDD2:Indiquer que le retrait n'est
+  plus possible et ses conséquences
+  (échec : hors délai);
+  stop
+else (non)
+endif
+:Simuler le plan sans cette activité;
+if (Sous le seuil de 12 crédits ?) then (oui)
+  :Avertir : perte du temps plein,
+  impact possible sur prêts et bourses;
+
+  |Étudiant|
+  if (Confirmer malgré l'alerte ?) then (non)
+    :Fin : plan inchangé;
+    stop
+  else (oui)
+  endif
+else (non)
+endif
+
+|Système|
+:Transmettre le retrait;
+
+|Système d'inscription officiel|
+:Enregistrer la modification ou l'abandon;
+
+|Système|
+:Remettre la case à « vide »;
+:Recalculer crédits et état des règles;
+:Fin : activité retirée;
+stop
+@enduml

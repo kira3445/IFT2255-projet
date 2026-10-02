@@ -1,0 +1,55 @@
+@startuml flux1
+title Flux 1 UC07 Soumettre une demande d'inscription à un cours
+
+|Étudiant|
+start
+:Choisir un cours dans l'offre;
+:Cliquer sur « Demander l'inscription »;
+
+|Système|
+:Vérifier les préalables
+à partir du relevé importé;
+if (Préalables satisfaits ?) then (non)
+  #FFCDD2:Afficher le préalable manquant
+  et proposer de l'ajouter au plan
+  (échec : préalable manquant);
+  stop
+else (oui)
+endif
+:Vérifier l'horaire
+par rapport au plan de session;
+if (Conflit d'horaire ?) then (oui)
+  #FFCDD2:Afficher le conflit et proposer
+  une autre section ou un autre cours
+  (échec : conflit d'horaire);
+  stop
+else (non)
+endif
+:Simuler les crédits du plan avec ce cours;
+if (Plafond de 18 crédits dépassé ?) then (oui)
+  #FFCDD2:Afficher la surcharge et
+  proposer de retirer une activité
+  (échec : plafond dépassé);
+  stop
+else (non)
+endif
+:Vérifier les places restantes;
+if (Place disponible ?) then (non)
+  #FFCDD2:Proposer de suivre le cours
+  (alerte si une place se libère)
+  (échec : cours complet);
+  stop
+else (oui)
+endif
+:Transmettre la demande d'inscription;
+
+|Système d'inscription officiel|
+:Enregistrer l'inscription;
+:Confirmer l'inscription;
+
+|Système|
+:Ajouter le cours au plan (état « confirmé »);
+:Recalculer crédits et état des règles;
+:Fin : inscription réussie;
+stop
+@enduml
