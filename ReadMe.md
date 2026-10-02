@@ -48,7 +48,7 @@ npm run dev
 
 | Outil | Utilise par | Utilisé pour | Parties concernées |
 |---|---|---|---|
-| Claude | Aide à la conception (diagrammes C4, structuration du projet), | Artefacts A1/A3, mise en place du dépôt, README |
+| Claude | Cheikh Ahmed Khalifa | Aide à la conception (diagrammes C4, structuration du projet), | Artefacts A1/A3, mise en place du dépôt, README |
 
 > ⚠️ Non délégué à l'IA : l'enquête (observations du prototype de référence, 
 > questions au conseiller, entretiens) — travail entièrement issu de l'équipe.
