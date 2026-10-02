@@ -40,7 +40,7 @@ npm run dev
 | Membre | Matricule |  Rôle / contribution |
 |---|---|---|
 | Cheikh Ahmed Khalifa | 20228606  | Modele C4 (A3), niveaux 1 et 2, parcourt documentee
-| [Nom 2] | [Ex. Diagramme A2, flux d'activités] |
+| Michel | 20229387 | Enquête sur le prototype (3 profils contrastés, sessions exportées), diagrammes d'activités (A2),prototype codé (client JavaFX, logique et données simulées) |
 | [Nom 3] | [Ex. Modèle C4 (A3), architecture backend] |
 | [Nom 4] | [Ex. Prototype frontend, rédaction du rapport] |
 
