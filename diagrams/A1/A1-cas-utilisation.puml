@@ -1,0 +1,99 @@
+@startuml A1-cas-utilisation
+' A1 - Diagramme de cas d'utilisation de la plateforme de planification de session
+' Export pour le rapport (300 DPI) : java -DPLANTUML_LIMIT_SIZE=8192 -jar plantuml.jar -SDPI=300 A1-cas-utilisation.puml
+' L'ordre des declarations influence la mise en page : le modifier peut deplacer les elements.
+
+left to right direction
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontSize 18
+skinparam nodesep 12
+skinparam ranksep 40
+skinparam usecase {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam rectangle {
+  BackgroundColor white
+  BorderColor black
+}
+
+title A1 - Cas d'utilisation de la plateforme de planification de session
+
+' ---------- Acteurs ----------
+' A gauche : acteurs principaux. A droite : acteur secondaire et systemes externes.
+actor "Encadrant ou partenaire\n(professeur, laboratoire,\norganisation)" as ENC <<acteur principal (UC14, UC15) /\nsecondaire (UC08)>>
+actor "Personne\nétudiante" as ETU <<acteur principal>>
+actor "Répertoire\ndes cours" as REP <<système externe>>
+actor "Calendrier\nuniversitaire" as CAL <<système externe>>
+actor "Service de\nnotifications" as NOT <<système externe>>
+actor "Système d'inscription\nofficiel" as SIO <<système externe>>
+actor "Administration\n(département,\nregistraire)" as ADM <<acteur secondaire>>
+
+' ---------- Cas d'utilisation ----------
+rectangle "Plateforme de planification de session" {
+  usecase "UC14\nPublier et gérer une\noffre d'encadrement" as UC14
+  usecase "UC15\nRépondre à une demande\nd'encadrement" as UC15
+  usecase "UC08\nSoumettre une demande\nd'encadrement" as UC08
+  usecase "UC02\nExplorer l'offre\nconsolidée" as UC02
+  usecase "UC01\nConfigurer son\nprofil d'études" as UC01
+  usecase "UC03\nConsulter la fiche\nd'une activité" as UC03
+  usecase "UC04\nPublier un avis\nsur une activité" as UC04
+  usecase "UC12\nPlanifier les\nsessions futures" as UC12
+  usecase "UC05\nObtenir et modifier\nun plan de session" as UC05
+  usecase "UC06\nConsulter les contraintes\net les dates limites" as UC06
+  usecase "UC13\nRecevoir des alertes\nde dates limites" as UC13
+  usecase "UC09\nSuivre l'état\nde ses demandes" as UC09
+  usecase "UC10\nModifier ou annuler une\ninscription ou une demande" as UC10
+  usecase "UC07\nSoumettre une demande\nd'inscription à un cours" as UC07
+
+  usecase "UC16\nImporter son\nrelevé de cours" as UC16
+  usecase "UC17\nConsulter les avis\nd'étudiants" as UC17
+  usecase "UC18\nConsulter la disponibilité\ndes places" as UC18
+  usecase "UC20\nVérifier les règles\ndu programme" as UC20
+  usecase "UC19\nVérifier l'admissibilité\n(préalables et horaire)" as UC19
+  usecase "UC11\nDemander une exception\nau département" as UC11
+}
+
+' ---------- Associations : encadrant ou partenaire ----------
+ENC -- UC14
+ENC -- UC15
+ENC -- UC08
+
+' ---------- Associations : personne étudiante ----------
+' Les extensions (UC11, UC16, UC17) ne sont pas reliees directement :
+' la personne etudiante y accede depuis le cas de base (UC07, UC01, UC03).
+ETU -- UC02
+ETU -- UC01
+ETU -- UC03
+ETU -- UC04
+ETU -- UC12
+ETU -- UC05
+ETU -- UC06
+ETU -- UC13
+ETU -- UC09
+ETU -- UC07
+ETU -- UC10
+ETU -- UC08
+
+' ---------- Associations : acteur secondaire et systemes externes ----------
+UC02 --- REP
+UC06 --- CAL
+UC13 --- CAL
+UC13 --- NOT
+UC09 --- NOT
+UC07 --- SIO
+UC10 --- SIO
+UC11 -- ADM
+
+' ---------- Inclusions et extensions ----------
+UC01 <.. UC16 : <<extend>>
+UC03 <.. UC17 : <<extend>>
+UC03 ..> UC18 : <<include>>
+UC05 ..> UC20 : <<include>>
+UC07 ..> UC20 : <<include>>
+UC08 ..> UC20 : <<include>>
+UC10 ..> UC20 : <<include>>
+UC07 ..> UC19 : <<include>>
+UC07 <.. UC11 : <<extend>>
+@enduml
