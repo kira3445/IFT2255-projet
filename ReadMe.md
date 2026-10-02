@@ -4,10 +4,9 @@
 
 ## 1. À quoi sert le projet
 
-[2-3 phrases : le problème que ça résout, en quoi ça diffère de "Mon cheminement". 
-Ex. "Ce projet aide les personnes étudiantes à planifier leur session en centralisant 
-cours, projets, stages et séminaires, tout en rendant visibles les contraintes 
-(crédits, temps plein, dates limites) avant la décision."]
+Cette plateforme aide une personne étudiante à planifier sa session en rassemblant dans une même interface les cours, projets supervisés, postes en laboratoire, stages, séminaires et concours disponibles, tout en rendant visibles les contraintes du programme (crédits, temps plein, échéances) avant la prise de décision.
+
+Le projet part du prototype de référence Mon cheminement, analysé et critiqué pour en tirer les exigences de notre propre système visé (voir le rapport d'analyse et de conception pour le détail).
 
 ## 2. État d'avancement
 
@@ -38,18 +37,18 @@ npm run dev
 
 ## 4. Composition de l'équipe et répartition du travail
 
-| Membre | Rôle / contribution |
-|---|---|
-| [Nom 1] | [Ex. Diagramme A1, cas d'utilisation] |
+| Membre | Matricule |  Rôle / contribution |
+|---|---|---|
+| Cheikh Ahmed Khalifa | 20228606  | Modele C4 (A3), niveaux 1 et 2, parcourt documentee
 | [Nom 2] | [Ex. Diagramme A2, flux d'activités] |
 | [Nom 3] | [Ex. Modèle C4 (A3), architecture backend] |
 | [Nom 4] | [Ex. Prototype frontend, rédaction du rapport] |
 
 ## 5. Outils d'assistance logicielle utilisés
 
-| Outil | Utilisé pour | Parties concernées |
-|---|---|---|
-| [Ex. Claude / ChatGPT / Copilot] | [Ex. génération de code, vibe coding] | [Ex. prototype frontend, boilerplate API] |
+| Outil | Utilise par | Utilisé pour | Parties concernées |
+|---|---|---|---|
+| Claude | Aide à la conception (diagrammes C4, structuration du projet), | Artefacts A1/A3, mise en place du dépôt, README |
 
 > ⚠️ Non délégué à l'IA : l'enquête (observations du prototype de référence, 
 > questions au conseiller, entretiens) — travail entièrement issu de l'équipe.
