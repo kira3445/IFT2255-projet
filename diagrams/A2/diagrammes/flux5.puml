@@ -1,0 +1,47 @@
+@startuml flux5
+title Flux 5 UC12 Planifier les sessions futures\n(scénario : déposer une intention)
+
+|Étudiant|
+start
+:Choisir une activité dans l'offre;
+:Cliquer sur « Plus tard »
+et choisir une session future;
+
+|Système|
+:Vérifier que l'activité est offerte
+à la session choisie;
+if (Offerte à cette session ?) then (non)
+  #FFCDD2:Indiquer les sessions où elle est offerte
+  (échec : non offerte);
+  stop
+else (oui)
+endif
+:Vérifier les règles de la session visée
+(plafond, préalables prévus);
+if (Règle enfreinte ?) then (oui)
+  :Afficher un avertissement
+  (l'intention reste permise);
+else (non)
+endif
+:Enregistrer l'intention
+(état « intention », distinct d'une place);
+:Afficher : « une intention ne réserve pas de place »;
+
+|Calendrier universitaire|
+:Publier la date d'ouverture
+des inscriptions de la session visée;
+
+|Système|
+:Rappeler l'intention à l'étudiant
+à l'ouverture des inscriptions;
+
+|Étudiant|
+if (Transformer en demande ?) then (oui)
+  :Soumettre la demande
+  (voir flux 1);
+  stop
+else (non)
+  :Fin : intention abandonnée ou reportée;
+  stop
+endif
+@enduml

@@ -1,0 +1,53 @@
+@startuml flux2
+title Flux 2 UC08 Soumettre une demande d'encadrement\n(scénario : projet supervisé)
+
+|Étudiant|
+start
+:Consulter les projets supervisés;
+:Choisir un projet;
+:Cliquer sur « Demander »;
+
+|Système|
+:Vérifier l'admissibilité
+(case libre, places restantes, date limite);
+if (Admissible ?) then (non)
+  #FFCDD2:Afficher le motif du refus
+  (échec : demande impossible);
+  stop
+else (oui)
+endif
+:Enregistrer la demande (état « demandé »);
+:Notifier l'encadrant;
+
+|Encadrant ou partenaire|
+:Examiner la demande;
+:Répondre (accepter ou refuser)
+ou ne pas répondre à temps;
+
+|Système|
+if (Réponse reçue avant l'échéance ?) then (non)
+  #FFCDD2:Faire expirer la demande;
+  #FFCDD2:Remettre la case à « vide »
+  et proposer des projets semblables
+  (échec : expiration);
+  stop
+else (oui)
+endif
+if (Demande acceptée ?) then (non)
+  #FFCDD2:Remettre la case à « vide »
+  et proposer des projets semblables
+  (échec : refus);
+  stop
+else (oui)
+endif
+:Passer la case à « offert »;
+:Notifier l'étudiant;
+
+|Étudiant|
+:Confirmer la place;
+
+|Système|
+:Passer la case à « confirmé »;
+:Fin : place obtenue;
+stop
+@enduml
