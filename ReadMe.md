@@ -73,7 +73,7 @@ mvn compile exec:java
 |---|---|---|---|
 | Claude | Cheikh Ahmed Khalifa, Moncef Ahmed Guellala | Aide à la conception (diagrammes C4, structuration du projet), Planification, Relecture et suggestions | A3, mise en place du dépôt, README |
 | Gemini |  Moncef Ahmed Guellala | Orthographe et Grammaire | Rapport |
-| Claude | Michel Kpomaho | relecture des diagrammes, génération du code du prototype, explications plus en profondeur du projet |  Prototype (client JavaFX, backend simulé), A3|
+| Claude | Michel Kpomaho | relecture des diagrammes, génération du code du prototype, explications plus en profondeur du projet |  Prototype (client JavaFX, backend simulé), A2|
 
 
 Code du prototype généré avec l'assistance de Claude (Anthropic), à partir de nos diagrammes A1, A2 et A3, puis relu, testé et ajusté par l'équipe.
