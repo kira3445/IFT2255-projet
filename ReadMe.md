@@ -65,7 +65,7 @@ mvn compile exec:java
 | Cheikh Ahmed Khalifa | 20228606  | Modele C4 (A3), niveaux 1 et 2, parcourt documentee
 | Michel | 20229387 | Enquête sur le prototype (3 profils contrastés, sessions exportées), diagrammes d'activités (A2),prototype codé (client JavaFX, logique et données simulées) |
 | Samy Naak | 20343103 |Analyse du prototype, A1, Redaction et coordination du rapport, ReadMe|
-| Moncef | [Ex. Prototype frontend, rédaction du rapport] |
+| Moncef | 20346073 | Révison du prototype, Fiches A1, Redaction rapport, Réalisation du diagramme A1, Debug|
 
 ## 5. Outils d'assistance logicielle utilisés
 
