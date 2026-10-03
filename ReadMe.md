@@ -71,7 +71,9 @@ mvn compile exec:java
 
 | Outil | Utilise par | Utilisé pour | Parties concernées |
 |---|---|---|---|
-| Claude | Cheikh Ahmed Khalifa | Aide à la conception (diagrammes C4, structuration du projet), | A3, mise en place du dépôt, README |
+| Claude | Cheikh Ahmed Khalifa, Moncef Ahmed Guellala | Aide à la conception (diagrammes C4, structuration du projet), Planification, Relecture et suggestions | A3, mise en place du dépôt, README |
+| Gemini |  Moncef Ahmed Guellala | Orthographe et Grammaire | Rapport |
+
 
 Code du prototype généré avec l'assistance de Claude (Anthropic), à partir de nos diagrammes A1, A2 et A3, puis relu, testé et ajusté par l'équipe.
 
