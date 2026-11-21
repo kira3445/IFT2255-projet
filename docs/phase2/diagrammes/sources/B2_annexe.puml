@@ -1,0 +1,125 @@
+@startuml B2_annexe
+title B2 - Annexe : classes hors de la vue principale
+skinparam dpi 150
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype polyline
+skinparam class {
+  BackgroundColor white
+  BorderColor #1F3A5F
+  ArrowColor #1F3A5F
+}
+hide circle
+hide empty members
+
+class ProfilControleur <<controleur>> {
+  + configurerProfil(etudiant : Etudiant) : void
+  + getProfil(matricule : String) : Etudiant
+  + importerReleve(matricule : String, cours : List<String>) : void
+}
+class OffreControleur <<controleur>> {
+  + getOffre(session : String) : List<Section>
+  + getFicheCours(code : String) : Cours
+  + publierOffre(offre : OffreEncadrement) : void
+}
+class DemandeControleur <<controleur>> {
+  + soumettreDemande(matricule : String, idSection : String) : ResultatVerification
+  + annulerDemande(id : int) : void
+  + getDemandes(matricule : String) : List<Demande>
+}
+class PlanControleur <<controleur>> {
+  + getPlan(matricule : String, session : String) : PlanSession
+  + modifierPlan(plan : PlanSession) : void
+}
+class ProfilService <<service>> {
+  + getProfil(matricule : String) : Etudiant
+  + modifierProfil(etudiant : Etudiant) : void
+  + importerReleve(etudiant : Etudiant, cours : List<String>) : void
+}
+class DepotDonnees <<depot>> <<composant B1 : Depot des donnees>> {
+  + enregistrerProfil(etudiant : Etudiant) : void
+  + enregistrerPlan(plan : PlanSession) : void
+  + enregistrerDemande(demande : Demande) : void
+  + enregistrerOffre(offre : OffreEncadrement) : void
+}
+class InscriptionClient <<client HTTP>> {
+  - url : String
+  + transmettreDemande(demande : Demande) : boolean
+}
+class CalendrierClient <<client HTTP>> {
+  - url : String
+  + getSession(code : String) : Session
+}
+class NotificationClient <<client HTTP>> {
+  - url : String
+  + envoyerNotification(message : String, destinataires : List<String>) : void
+}
+class Encadrant <<composant B1 : ProfilService>> {
+  - organisation : String
+}
+class OffreEncadrement <<persistant>> <<composant B1 : OffreService>> {
+  - id : int
+  - titre : String
+  - credits : int
+  - places : int
+  + estComplete() : boolean
+}
+enum TypeDemande <<composant B1 : DemandeService>> {
+  INSCRIPTION
+  ENCADREMENT
+  EXCEPTION
+}
+enum StatutDemande <<composant B1 : DemandeService>> {
+  EN_ATTENTE
+  ACCEPTEE
+  REFUSEE
+  EXPIREE
+  ANNULEE
+}
+enum EtatVerification <<composant B1 : ContrainteService>> {
+  VALIDE
+  AVERTISSEMENT
+  BLOQUANT
+  NON_VERIFIE
+}
+abstract class Utilisateur {
+}
+class Demande {
+}
+class PlanService <<service>> {
+}
+class DemandeService <<service>> {
+}
+class OffreService <<service>> {
+}
+class ContrainteService <<service>> {
+}
+class ResultatVerification {
+}
+
+ProfilControleur "1" --> "1" ProfilService : utilise
+OffreControleur "1" --> "1" OffreService : utilise
+DemandeControleur "1" --> "1" DemandeService : utilise
+PlanControleur "1" --> "1" PlanService : utilise
+ProfilService "1" --> "1" DepotDonnees : utilise
+OffreService "1" --> "1" DepotDonnees : utilise
+PlanService "1" --> "1" DepotDonnees : utilise
+DemandeService "1" --> "1" DepotDonnees : utilise
+DemandeService "1" --> "1" InscriptionClient : utilise
+DemandeService "1" --> "1" NotificationClient : utilise
+PlanService "1" --> "1" NotificationClient : utilise
+ContrainteService "1" --> "1" CalendrierClient : utilise
+Encadrant --|> Utilisateur
+OffreEncadrement "*" -- "1" Encadrant : publiée par
+Demande "*" -- "0..1" OffreEncadrement : concerne
+Demande ..> TypeDemande : <<type>>
+Demande ..> StatutDemande : <<statut>>
+ResultatVerification ..> EtatVerification : <<etat>>
+
+legend right
+  «persistant» : objets conservés d'une visite à l'autre,
+  sur le serveur (PostgreSQL, via DepotDonnees)
+  «composant B1 : X» : composant de B1 qui héberge la classe
+  (classe sans cette mention : elle est elle-même un composant de B1)
+endlegend
+@enduml
