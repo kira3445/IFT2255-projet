@@ -1,5 +1,65 @@
-# Phase 2 — Conception
+#  Plateforme de planification des études — projet de session IFT2255 (Automne 2026), Phase 2
 
-- Rapport : `docs/phase2/<rapport>.pdf`
-- Diagrammes : `diagrammes/` (sources et images)
-- Release : https://github.com/kira3445/IFT2255-projet/releases/tag/phase-2
+- **Rapport :** `docs/phase2/[À COMPLÉTER : nom du PDF]`
+- **Release :** https://github.com/kira3445/IFT2255-projet/releases/tag/phase-2
+
+## 1. Changements depuis la phase 1
+
+- [À COMPLÉTER : changement 1 — raison (rétroaction reçue, réponse du conseiller, contrainte découverte)]
+- [À COMPLÉTER : changement 2 — raison]
+- [À COMPLÉTER : changement 3 — raison]
+
+## 2. Contenu de la remise
+
+| Artefact | Contenu | Emplacement |
+|---|---|---|
+| B1 | Modèle C4 niveau 3 (composants) | Rapport, section 3 · `diagrammes/` |
+| B2 | Diagramme de classes | Rapport, section 4 · `diagrammes/` |
+| B3 | Spécification des tests (critères d'acceptation, jeu de données, oracle) | Rapport, section 5 |
+| B4 | Modèle de données | Rapport, section 4.4 · `diagrammes/` |
+| — | Traçabilité (flux A2 → composants → classes → tests) | Rapport, sections 3.4 et 6 |
+
+## 3. État d'avancement
+### Ce qui est conçu
+
+[À COMPLÉTER]
+
+### Ce qui est implémenté
+
+[À COMPLÉTER]
+
+### Ce qui reste à faire
+
+[À COMPLÉTER]
+
+## 4. Installation et lancement
+
+[À COMPLÉTER : inchangé depuis la phase 1, ou nouvelles instructions]
+
+## 5. Composition de l'équipe et répartition du travail
+| Membre | Matricule |  Rôle / contribution |
+|---|---|---|
+| Cheikh Ahmed Khalifa | 20228606 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
+| Michel Kpomaho | 20229387 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
+| Samy Naak | 20343103 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
+| Moncef Ahmed Guellala | 20346073 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
+
+## 6. Outils d'assistance logicielle utilisés
+| Outil | Utilise par | Utilisé pour | Parties concernées |
+|---|---|---|---|
+| [À COMPLÉTER] | | | |
+
+⚠️ Non délégué à l'IA : [À COMPLÉTER]
+
+## Structure du dossier
+
+```
+docs/phase2/
+├── README.md        → ce fichier
+├── <rapport>.pdf    → rapport de conception (phase 2)
+├── diagrammes/
+│   ├── sources/     → fichiers sources des diagrammes (B1, B2, B4)
+│   └── images/      → exports PNG inclus dans le rapport
+├── tests/           → (voir rapport, section 5)
+└── tracabilite/     → (voir rapport, sections 3.4 et 6)
+```
