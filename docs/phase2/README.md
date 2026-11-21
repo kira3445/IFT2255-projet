@@ -39,7 +39,7 @@
 ## 5. Composition de l'équipe et répartition du travail
 | Membre | Matricule |  Rôle / contribution |
 |---|---|---|
-| Cheikh Ahmed Khalifa | 20228606 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
+| Cheikh Ahmed Khalifa | 20228606 | B1, conception de diagramme C4 niveau 3 |
 | Michel Kpomaho | 20229387 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
 | Samy Naak | 20343103 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
 | Moncef Ahmed Guellala | 20346073 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
