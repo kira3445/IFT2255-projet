@@ -24,6 +24,7 @@
 
 - C4 niveau 3 du conteneur API/Backend : 4 contrôleurs, 5 services, dépôts de données et 4 clients d'intégration
 - Diagramme de classes, modèle de données et spécification des tests
+- Spécification des tests (B3) : 25 critères d'acceptation et 25 tests unitaires couvrant les 14 exigences retenues, avec jeu de données commun et bouchons pour les dépendances externes (API Planifium, notifications, horloge).
 
 ### Ce qui est implémenté
 
@@ -31,7 +32,8 @@
 
 ### Ce qui reste à faire
 
-[À COMPLÉTER]
+- Implémenter les 25 tests unitaires de B3 (JUnit) une fois les classes codées.
+- Ajouter au diagramme de classes (B2) les éléments marqués « à ajouter » dans l'oracle : VerificateurDateLimite, résultat de préalables à trois valeurs, copie datée du catalogue, GenerateurPlan, GestionnaireDemandes.verifierExpirations.
 
 ## 4. Installation et lancement
 
@@ -41,14 +43,14 @@
 | Membre | Matricule |  Rôle / contribution |
 |---|---|---|
 | Cheikh Ahmed Khalifa | 20228606 | B1, conception de diagramme C4 niveau 3 |
-| Michel Kpomaho | 20229387 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
+| Michel Kpomaho | 20229387 | B3 – Spécification des tests : 25 critères d'acceptation (E1 à E14), jeu de données (DS-1 à DS-8), hypothèses de test (H1 à H7), oracle de 25 tests unitaires (T01 à T25) et traçabilité exigences → critères → tests → classes (section 6) |
 | Samy Naak | 20343103 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
 | Moncef Ahmed Guellala | 20346073 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
 
 ## 6. Outils d'assistance logicielle utilisés
 | Outil | Utilise par | Utilisé pour | Parties concernées |
 |---|---|---|---|
-| [À COMPLÉTER] | | | |
+| Claude (Anthropic) | Michel Kpomaho | [Relecture de la cohérence de B3 avec le gabarit, aide pour la release GitHub] | B3 (section 5 et 6) |
 
 ⚠️ Non délégué à l'IA : [À COMPLÉTER]
 
