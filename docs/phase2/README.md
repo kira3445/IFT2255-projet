@@ -49,7 +49,7 @@
 
 ## 6. Outils d'assistance logicielle utilisés
 | Outil | Utilise par | Utilisé pour | Parties concernées |
-|---|---|---|---|
+|Claude|Cheikh ahmed khalifa|Aide de comprendre les fonctions des composantes|B1|
 | Claude (Anthropic) | Michel Kpomaho | [Relecture de la cohérence de B3 avec le gabarit, aide pour la release GitHub] | B3 (section 5 et 6) |
 
 ⚠️ Non délégué à l'IA : [À COMPLÉTER]
