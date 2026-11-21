@@ -51,7 +51,7 @@
 | Outil | Utilise par | Utilisé pour | Parties concernées |
 |---|---|---|---|
 | Claude (Anthropic) | Michel Kpomaho | [Relecture de la cohérence de B3 avec le gabarit, aide pour la release GitHub] | B3 (section 5 et 6) |
-
+| Claude  | Cheikh Ahmed Khalifa | Donner des suggestions pour la decomposition de la contrainte Backend | B1 |
 
 ⚠️ Non délégué à l'IA : [À COMPLÉTER]
 
