@@ -22,7 +22,8 @@
 ## 3. État d'avancement
 ### Ce qui est conçu
 
-[À COMPLÉTER]
+- C4 niveau 3 du conteneur API/Backend : 4 contrôleurs, 5 services, dépôts de données et 4 clients d'intégration
+- Diagramme de classes, modèle de données et spécification des tests
 
 ### Ce qui est implémenté
 
