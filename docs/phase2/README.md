@@ -49,8 +49,9 @@
 
 ## 6. Outils d'assistance logicielle utilisés
 | Outil | Utilise par | Utilisé pour | Parties concernées |
-
+|---|---|---|---|
 | Claude (Anthropic) | Michel Kpomaho | [Relecture de la cohérence de B3 avec le gabarit, aide pour la release GitHub] | B3 (section 5 et 6) |
+
 
 ⚠️ Non délégué à l'IA : [À COMPLÉTER]
 
