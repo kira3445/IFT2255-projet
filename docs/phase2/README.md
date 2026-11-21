@@ -42,7 +42,7 @@
 ## 5. Composition de l'équipe et répartition du travail
 | Membre | Matricule |  Rôle / contribution |
 |---|---|---|
-| Cheikh Ahmed Khalifa | 20228606 | B1, conception de diagramme C4 niveau 3 |
+| Cheikh Ahmed Khalifa | 20228606 | B1, conception de diagramme C4 niveau 3 : 4 controleurs, 5 services, 4 clients et 1 depot de donnees, lien avec B2 |
 | Michel Kpomaho | 20229387 | B3 – Spécification des tests : 25 critères d'acceptation (E1 à E14), jeu de données (DS-1 à DS-8), hypothèses de test (H1 à H7), oracle de 25 tests unitaires (T01 à T25) et traçabilité exigences → critères → tests → classes (section 6) |
 | Samy Naak | 20343103 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
 | Moncef Ahmed Guellala | 20346073 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
