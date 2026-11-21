@@ -59,8 +59,11 @@ Inchangé depuis la phase 1 : voir la section « Installation et lancement » du
 |---|---|---|---|
 | Claude (Anthropic) | Michel Kpomaho | [Relecture de la cohérence de B3 avec le gabarit, aide pour la release GitHub] | B3 (section 5 et 6) |
 | Claude  | Cheikh Ahmed Khalifa | Donner des suggestions pour la decomposition de la contrainte Backend | B1 |
+| Gemini | Moncef Ahmed Guellala | Correction de l'orthographe | Texte de B2 (section 4) |
+| Claude (Anthropic) | Moncef Ahmed Guellala | Planification et ordre des tâches, structuration des idées | B2 (section 4) |
 
-⚠️ Non délégué à l'IA : [À COMPLÉTER]
+⚠️ Non délégué à l'IA :
+B2 : le diagramme de classes, les choix de conception et la cohérence avec B1, B3 et B4.
 
 ## Structure du dossier
 
