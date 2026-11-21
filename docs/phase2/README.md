@@ -5,9 +5,15 @@
 
 ## 1. Changements depuis la phase 1
 
-- [À COMPLÉTER : changement 1 — raison (rétroaction reçue, réponse du conseiller, contrainte découverte)]
-- [À COMPLÉTER : changement 2 — raison]
-- [À COMPLÉTER : changement 3 — raison]
+Aucun changement depuis la phase 1 :
+
+| Exigences | Cas d'utilisation (A1) | Flux (A2) | Modèle C4 (niveaux 1 et 2) |
+|---|---|---|---|
+| Inchangé | Inchangé | Inchangé | Inchangé |
+
+Hypothèses retenues pour la phase 2 :
+- **H-01** : l'identité de la personne connectée est connue de l'API à chaque requête.
+- **H-02** : les exigences du programme et les dates limites viennent des sources externes ; la personne étudiante ne les modifie pas.
 
 ## 2. Contenu de la remise
 
@@ -28,7 +34,8 @@
 
 ### Ce qui est implémenté
 
-[À COMPLÉTER]
+- Prototype de la phase 1 (client JavaFX, logique et données simulées) : voir le README principal
+- L'API Spring Boot et la base PostgreSQL conçues dans cette phase ne sont pas encore implémentées
 
 ### Ce qui reste à faire
 
@@ -37,7 +44,7 @@
 
 ## 4. Installation et lancement
 
-[À COMPLÉTER : inchangé depuis la phase 1, ou nouvelles instructions]
+Inchangé depuis la phase 1 : voir la section « Installation et lancement » du [README principal](../../ReadMe.md).
 
 ## 5. Composition de l'équipe et répartition du travail
 | Membre | Matricule |  Rôle / contribution |
