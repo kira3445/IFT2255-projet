@@ -1,6 +1,6 @@
 #  Plateforme de planification des études — projet de session IFT2255 (Automne 2026), Phase 2
 
-- **Rapport :** `docs/phase2/phase2.pdf`
+- **Rapport :** `docs/phase2/projet IFT2255 - phase2.pdf`
 - **Release :** https://github.com/kira3445/IFT2255-projet/releases/tag/phase-2
 
 ## 1. Changements depuis la phase 1
