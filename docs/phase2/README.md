@@ -5,9 +5,15 @@
 
 ## 1. Changements depuis la phase 1
 
-- [À COMPLÉTER : changement 1 — raison (rétroaction reçue, réponse du conseiller, contrainte découverte)]
-- [À COMPLÉTER : changement 2 — raison]
-- [À COMPLÉTER : changement 3 — raison]
+Aucun changement depuis la phase 1 :
+
+| Exigences | Cas d'utilisation (A1) | Flux (A2) | Modèle C4 (niveaux 1 et 2) |
+|---|---|---|---|
+| Inchangé | Inchangé | Inchangé | Inchangé |
+
+Hypothèses retenues pour la phase 2 :
+- **H-01** : l'identité de la personne connectée est connue de l'API à chaque requête.
+- **H-02** : les exigences du programme et les dates limites viennent des sources externes ; la personne étudiante ne les modifie pas.
 
 ## 2. Contenu de la remise
 
@@ -28,7 +34,8 @@
 
 ### Ce qui est implémenté
 
-[À COMPLÉTER]
+- Prototype de la phase 1 (client JavaFX, logique et données simulées) : voir le README principal
+- L'API Spring Boot et la base PostgreSQL conçues dans cette phase ne sont pas encore implémentées
 
 ### Ce qui reste à faire
 
@@ -37,7 +44,7 @@
 
 ## 4. Installation et lancement
 
-[À COMPLÉTER : inchangé depuis la phase 1, ou nouvelles instructions]
+Inchangé depuis la phase 1 : voir la section « Installation et lancement » du [README principal](../../ReadMe.md).
 
 ## 5. Composition de l'équipe et répartition du travail
 | Membre | Matricule |  Rôle / contribution |
@@ -45,15 +52,18 @@
 | Cheikh Ahmed Khalifa | 20228606 | B1, conception de diagramme C4 niveau 3 : 4 controleurs, 5 services, 4 clients et 1 depot de donnees, lien avec B2 |
 | Michel Kpomaho | 20229387 | B3 – Spécification des tests : 25 critères d'acceptation (E1 à E14), jeu de données (DS-1 à DS-8), hypothèses de test (H1 à H7), oracle de 25 tests unitaires (T01 à T25) et traçabilité exigences → critères → tests → classes (section 6) |
 | Samy Naak | 20343103 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
-| Moncef Ahmed Guellala | 20346073 | [À COMPLÉTER : B1 / B2 / B3 / B4 …] |
+| Moncef Ahmed Guellala | 20346073 | B2 – Diagramme de classes : vue principale (15 classes), annexe, modèle du domaine, rattachement des classes aux composants de B1 et classes conservées (lien avec B4) |
 
 ## 6. Outils d'assistance logicielle utilisés
 | Outil | Utilise par | Utilisé pour | Parties concernées |
 |---|---|---|---|
 | Claude (Anthropic) | Michel Kpomaho | [Relecture de la cohérence de B3 avec le gabarit, aide pour la release GitHub] | B3 (section 5 et 6) |
 | Claude  | Cheikh Ahmed Khalifa | Donner des suggestions pour la decomposition de la contrainte Backend | B1 |
+| Gemini | Moncef Ahmed Guellala | Correction de l'orthographe | Texte de B2 (section 4) |
+| Claude (Anthropic) | Moncef Ahmed Guellala | Planification et ordre des tâches, structuration des idées | B2 (section 4) |
 
-⚠️ Non délégué à l'IA : [À COMPLÉTER]
+⚠️ Non délégué à l'IA :
+B2 : le diagramme de classes, les choix de conception et la cohérence avec B1, B3 et B4.
 
 ## Structure du dossier
 

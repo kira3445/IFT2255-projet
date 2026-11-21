@@ -1,0 +1,135 @@
+@startuml B2_vue_principale
+title B2 - Diagramme de classes (vue principale, 15 classes)
+skinparam dpi 150
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype polyline
+skinparam class {
+  BackgroundColor white
+  BorderColor #1F3A5F
+  ArrowColor #1F3A5F
+}
+hide circle
+hide empty members
+
+abstract class Utilisateur <<composant B1 : ProfilService>> {
+  - id : int
+  - nom : String
+  - courriel : String
+}
+class Etudiant <<persistant>> <<composant B1 : ProfilService>> {
+  - matricule : String
+  - disponibiliteHeures : int
+  - releve : List<String>
+  + aReussi(codeCours : String) : boolean
+}
+class Programme <<composant B1 : ContrainteService>> {
+  - code : String
+  - nom : String
+  - plafondCredits : int
+  - seuilTempsPlein : int
+  + getBlocs() : List<BlocCours>
+}
+class BlocCours <<composant B1 : ContrainteService>> {
+  - nom : String
+  - creditsMin : int
+  - creditsMax : int
+  + contient(cours : Cours) : boolean
+}
+class Cours <<composant B1 : OffreService>> {
+  - code : String
+  - titre : String
+  - credits : int
+  - prealables : List<String>
+  + heuresParSemaine() : int
+}
+class Section <<composant B1 : OffreService>> {
+  - id : String
+  - jour : String
+  - heureDebut : LocalTime
+  - heureFin : LocalTime
+  - places : int
+  - inscrits : int
+  + estComplete() : boolean
+  + chevauche(autre : Section) : boolean
+}
+class Session <<composant B1 : CalendrierClient>> {
+  - code : String
+  - dateLimiteModification : LocalDate
+  - dateLimiteAbandon : LocalDate
+}
+class PlanSession <<persistant>> <<composant B1 : PlanService>> {
+  - id : int
+  + getCredits() : int
+  + ajouter(section : Section) : void
+  + retirer(section : Section) : void
+}
+class Demande <<persistant>> <<composant B1 : DemandeService>> {
+  - id : int
+  - type : TypeDemande
+  - statut : StatutDemande
+  - dateEnvoi : LocalDate
+  - dateExpiration : LocalDate
+  + changerStatut(statut : StatutDemande) : void
+}
+class PlanService <<service>> {
+  + getPlan(etudiant : Etudiant, session : Session) : PlanSession
+  + ajouterCours(plan : PlanSession, section : Section) : ResultatVerification
+  + retirerCours(plan : PlanSession, section : Section) : ResultatVerification
+}
+class DemandeService <<service>> {
+  + soumettreDemande(etudiant : Etudiant, section : Section) : ResultatVerification
+  + annulerDemande(id : int) : void
+  + getDemandes(etudiant : Etudiant) : List<Demande>
+}
+class OffreService <<service>> {
+  + getOffre(session : Session) : List<Section>
+  + getCours(code : String) : Cours
+}
+class ContrainteService <<service>> {
+  + verifierRegles(plan : PlanSession, section : Section) : ResultatVerification
+  + verifierPrealables(etudiant : Etudiant, cours : Cours) : ResultatVerification
+  + verifierPlafond(plan : PlanSession, cours : Cours) : ResultatVerification
+  + verifierBlocs(plan : PlanSession, cours : Cours) : ResultatVerification
+  + verifierHoraire(plan : PlanSession, section : Section) : ResultatVerification
+  + estTempsPlein(plan : PlanSession) : boolean
+}
+class RepertoireClient <<client API Planifium>> {
+  - url : String
+  + getCours(filtre : String) : List<Cours>
+  + getProgramme(code : String) : Programme
+}
+class ResultatVerification <<composant B1 : ContrainteService>> {
+  - etat : EtatVerification
+  - messages : List<String>
+  + ajouterMessage(message : String, etat : EtatVerification) : void
+  + estBloquant() : boolean
+}
+
+Etudiant --|> Utilisateur
+Etudiant "*" -- "1" Programme : inscrit dans
+Programme "1" *-- "1..*" BlocCours : contient
+BlocCours "*" -- "1..*" Cours : regroupe
+Section "*" -- "1" Cours : offre
+Section "*" -- "1" Session : pendant
+Etudiant "1" -- "*" PlanSession : prépare
+PlanSession "*" -- "1" Session : pour
+PlanSession "*" o-- "*" Section : contient
+Etudiant "1" -- "*" Demande : envoie
+Demande "*" -- "0..1" Section : concerne
+PlanService "1" --> "1" ContrainteService : utilise
+DemandeService "1" --> "1" ContrainteService : utilise
+OffreService "1" --> "1" RepertoireClient : utilise
+ContrainteService ..> ResultatVerification : <<crée>>
+PlanService ..> PlanSession : <<modifie>>
+DemandeService ..> Demande : <<crée>>
+ContrainteService ..> Programme : <<lit les règles>>
+OffreService ..> Section : <<retourne>>
+
+legend right
+  «persistant» : objets conservés d'une visite à l'autre,
+  sur le serveur (PostgreSQL, via DepotDonnees)
+  «composant B1 : X» : composant de B1 qui héberge la classe
+  (classe sans cette mention : elle est elle-même un composant de B1)
+endlegend
+@enduml
